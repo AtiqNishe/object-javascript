@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>No One confused this keyword</h1>
+    <h2 onclick="this.innerText='i am clicked'"> do,t clicked</h2>
+
+    <script>
+        const myObj = {
+            name : 'Rohim Ali',
+
+            getFullName: function() {
+                console.log(this.name);
+                return 'Mr.'+ this.name;
+            }
+        }
+       // myObj.getFullName();
+
+        const anonObj = {
+            name : 'Atiqur Rahman',
+        }
+        const myNewObj = {
+            name : 'Doly Akter',
+        }
+        const myoldObj = {
+            name : 'Rina Akter',
+        }
+
+
+anonObj.getFullName= myObj.getFullName; // make ===
+console.log(anonObj.getFullName);
+anonObj.getFullName();
+myObj.getFullName();
+myNewObj.getFullName=myObj.getFullName;
+myNewObj.getFullName();
+myoldObj.getFullName=myObj.getFullName;
+myoldObj.getFullName();
+
+
+
+function add(a,b){
+    console.log(this)
+    return a+b;
+}
+add(5,5);
+    </script>
+</body>
+</html>
